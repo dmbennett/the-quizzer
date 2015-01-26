@@ -4,8 +4,7 @@ def is_true_or_false?(answer)
   elsif answer == "false" || answer == "f" || answer == false
     return false
   else
-    "puts nil"
-    return nil
+     return nil
   end
 end
 
