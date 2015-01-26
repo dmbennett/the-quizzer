@@ -8,6 +8,8 @@ def is_true_or_false?(answer)
   end
 end
 
+def grade_the_quiz ()
+
 teacher_q_and_a = {
   "True or False: '<!--...-->' defines a comment in html?" => true,
   "True or False: '<li></li>' defines an item in a list in html?" => false,
@@ -22,12 +24,15 @@ teacher_q_and_a = {
 }
 
 question_number = 0
-teacher_q_and_a.keys.each do |key, value|
+student_quiz_answers = {}
+teacher_q_and_a.keys.each do |question, correct_answer|
   question_number += 1
-  puts "#{question_number}. #{key}"
+  puts "#{question_number}. #{question}"
   answer = gets.chomp.downcase
   while is_true_or_false?(answer) != true && is_true_or_false?(answer) != false
     puts "Please enter only 'true' or 'false': "
     answer = gets.chomp.downcase
   end
+  student_quiz_answers[question] = answer
 end
+
